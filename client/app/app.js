@@ -1,0 +1,1 @@
+angular.module('node-angular', ['js-height-fix']);
