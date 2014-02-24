@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  border-bo
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.app {
+  width: 100%;
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+.content-wrapper {
+  background: #ccc;
+  width: auto;
+  height: 100%;
+
+  position: relative;
+}
+
+.tool-bar {
+  height: auto;
+}
+
+.tool-bar-item {
+  float: left;
+
+  width: 200px;
+  height: 20px;
+
+  background: white;
+}
+
+.content-area {
+  width: 100%;
+  background: blue;
+
+  position: absolute;
+  bottom: 0;
+}
+
+.content-area .right-panel-wrapper {
+  width: 25%;
+
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+  background: orange;
+}
