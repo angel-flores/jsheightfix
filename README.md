@@ -1,6 +1,6 @@
-# Node Angular Template #
+# Angular JSHeightFix #
  
-Quickly setup a Node server with Angular front end.
+Angular directive for applying height to a child element to occupy the remaining height of the page
 
 ### Application Stack ######
 
@@ -13,8 +13,6 @@ Quickly setup a Node server with Angular front end.
 - [Angular 1.1.1](http://angularjs.org/)
 
 - [jQuery 1.10.2](jquery.com)
-
-- [Bootstrap 3](http://getbootstrap.com/)
 
 ### Node Dependencies ######
 
