@@ -1,3 +1,8 @@
+/*! 
+ * jsheightfix v0.1.0
+ * 
+ * Copyright (c) 2014 Angel Flores
+ */
 angular.module('js-height-fix', [])
 
 .directive('jsheightfix', ['$window', '$timeout', function($window, $timeout) {
@@ -66,9 +71,9 @@ angular.module('js-height-fix', [])
       var $window = $(window);
 
       $scope.$on('$destroy', function() {
-        $window.off('resize.jsheightfix')
+        $window.off('resize.jsheightfix');
       });
     }
-  }
+  };
 
 }]);

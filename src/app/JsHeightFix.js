@@ -66,9 +66,9 @@ angular.module('js-height-fix', [])
       var $window = $(window);
 
       $scope.$on('$destroy', function() {
-        $window.off('resize.jsheightfix')
+        $window.off('resize.jsheightfix');
       });
     }
-  }
+  };
 
 }]);

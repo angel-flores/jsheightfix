@@ -1,0 +1,7 @@
+/*! 
+ * jsheightfix v0.1.0
+ * 
+ * Copyright (c) 2014 Angel Flores
+ */
+
+.js_height_container{width:auto;height:100%;position:relative}.js_height_fixed{height:auto}.js_height_fixed:after,.js_height_fixed:before{content:" ";display:table}.js_height_fixed:after{clear:both}

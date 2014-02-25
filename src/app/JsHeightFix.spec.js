@@ -1,26 +1,16 @@
 describe('Directive: JsHeightFix', function() {
 
     var element, scope, compile, win,
-        defaultWidth = 200, defaultHeight = 200;
-
-        $container = angular.element(
-            "<div class='js_height_container' style='height: 200px;'>" + 
-            "</div>"
-        ),
-        
-        $fixed = angular.element(
-            "<div class='js_height_fixed' style='height: 10px;'></div>"
-        ),
-
-        $validTemplate = angular.element(
-            "<div jsheightfix style='border:1px solid red;'></div>"
-        );
+        defaultWidth = 200, defaultHeight = 200,
+        $container = angular.element("<div class='js_height_container' style='height: 200px;'></div>"),
+        $fixed = angular.element("<div class='js_height_fixed' style='height: 10px;'></div>"),
+        $validTemplate = angular.element("<div jsheightfix></div>");
 
     function createDirective(template) {
         var el;
         
         el = compile(template || $validTemplate)(scope);
-        scope.$apply()
+        scope.$apply();
         return el;
     }
 

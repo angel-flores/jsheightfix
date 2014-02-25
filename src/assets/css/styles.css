@@ -23,14 +23,6 @@ body {
 
 .content-wrapper {
   background: #ccc;
-  width: auto;
-  height: 100%;
-
-  position: relative;
-}
-
-.tool-bar {
-  height: auto;
 }
 
 .tool-bar-item {

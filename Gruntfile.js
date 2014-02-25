@@ -4,28 +4,56 @@ module.exports = function(grunt) {
 
         pkg: grunt.file.readJSON('package.json'),
 
+        banner: '/*! \n * <%= pkg.title || pkg.name %> v<%= pkg.version %>\n' +
+            ' * <%= pkg.homepage %>\n' +
+            ' * Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' +
+            ' */\n',
+
         clean: {
             src: ['dist']
         },
 
         concat: {
+            deploy: {
+                options: {
+                    banner: '<%= banner %>',
+                    stripBanners: true
+                },
+                files: {
+                    'dist/jsheightfix.js': 'src/app/jsheightfix.js',
+                    'dist/jsheightfix.css': 'src/assets/css/jsheightfix.css'
+                }
+            }
+        },
+
+        cssmin: {
             options: {
                 banner: '<%= banner %>',
-                stripBanners: true
+                report: 'gzip'
             },
-            dist: {
-                src: ['src/app/<%= pkg.name %>.js'],
-                dest: 'dist/<%= pkg.name %>.js'
+            minify: {
+                src: 'src/assets/css/jsheightfix.css',
+                dest: 'dist/jsheightfix.min.css'
             }
         },
 
         uglify: {
-            options: {
-                banner: '<%= banner %>'
+            deploy: {
+                options: {
+                    banner: '<%= banner %>'
+                },
+                files: [{
+                    'dist/jsheightfix.min.js': 'dist/jsheightfix.js',
+                }] 
+            }
+        },
+
+        jshint: {
+            gruntFile: {
+                src: 'Gruntfile.js'
             },
-            dist: {
-                src: '<%= concat.dist.dest %>',
-                dest: 'dist/<%= pkg.name %>.min.js'
+            src: {
+                src: ['src/app/**/*.js']
             }
         },
 
@@ -65,12 +93,14 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-nodestatic');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-jshint');
 
-    grunt.registerTask('devmode', ['karma:unit','clean', 'concat', 'uglify', 'watch']);
-    grunt.registerTask('deploy', ['karma:unit', 'clean', 'concat', 'uglify']);
+    grunt.registerTask('devmode', ['jshint', 'karma:unit','clean', 'concat', 'uglify', 'watch']);
+    grunt.registerTask('deploy', ['jshint', 'karma:unit', 'clean', 'cssmin', 'concat', 'uglify']);
     grunt.registerTask('default', ['karma']);
   
-}
+};

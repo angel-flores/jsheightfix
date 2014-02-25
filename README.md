@@ -1,25 +1,37 @@
 # Angular JSHeightFix #
  
-Angular directive for applying height to a child element to occupy the remaining height of the page
+Angular directive for applying height to a child element to occupy the remaining height of the page.
 
-### Application Stack ######
+Designed for web applications the layout takes up the full height of the browser window while allowing for a "bar" element to have varying height which may change window resize.
 
-- [Node.js](http://www.nodejs.org)
+### Dependencies ######
 
-- [Express](http://www.expressjs.com/)
+- [jQuery](http://jquery.com)
 
-- [Jade](http://jade-lang.com/)
+- [Angular](http://angularjs.org/)
 
-- [Angular 1.1.1](http://angularjs.org/)
+## Usage ####
 
-- [jQuery 1.10.2](jquery.com)
+### Loading Dependencies #####
+    
+    <!-- styles -->
+    <link rel="stylesheet" type="text/css" href="jsheightfix.css"></link>
 
-### Node Dependencies ######
+    <!-- scripts -->
+    <script src="jquery.min.js"></script>
+    <script src="angular.min.js"></script>
 
-    cd server
-    npm install
+    <script src="jsheightfix.js"></script>
+    
+### Layout #####
 
-### Launch ######
+    <!-- container div, height: 100% -->
+    <div class="js_height_container"> 
 
-    # in server/
-    node server.js
+        <!-- fixed div, height is set by its contents -->
+        <div class="js_height_fixed"></div>
+
+        <!-- remaining div, height is set to container.height - fixed.height -->
+        <div jsheightfix class="js_height_remaining"></div>
+    </div>
+

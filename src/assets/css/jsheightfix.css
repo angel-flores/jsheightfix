@@ -1,0 +1,22 @@
+.js_height_container {
+  width: auto;
+  height: 100%;
+
+  position: relative;
+}
+
+.js_height_fixed {
+  height: auto;  
+}
+
+.js_height_fixed:before,
+.js_height_fixed:after {
+    content: " ";
+    display: table;
+}
+
+.js_height_fixed:after {
+    clear:both;
+}
+
+.js_height_remaining { /* height set in js */ }
