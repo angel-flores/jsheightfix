@@ -3,10 +3,6 @@ body {
   padding: 0;
 }
 
-* {
-  border-bo
-}
-
 .clearfix:before,
 .clearfix:after {
     content: " "; /* 1 */

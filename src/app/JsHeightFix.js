@@ -1,12 +1,12 @@
 angular.module('js-height-fix', [])
 
-.directive('jsheightfix', function($window) {
+.directive('jsheightfix', ['$window', '$timeout', function($window, $timeout) {
 
   var DELTA = 50;
 
   return {
     restrict: 'A',
-    controller: function($scope, $element, $attrs) {
+    controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs) {
       var Ctrl = this;
 
       var timeout = false, resizetime;
@@ -48,7 +48,8 @@ angular.module('js-height-fix', [])
       $containerEl = $element.parent('.' + containerCls);
       $targetEl = $element;
 
-      _fixHeight();
+      _fixHeight(); // elements rendered on page
+      $timeout(_fixHeight, 0); // wait til next $digest
 
       $window.on('resize.jsheightfix', function() {
         // console.log(++counter);
@@ -59,15 +60,15 @@ angular.module('js-height-fix', [])
           setTimeout(_resize, DELTA);
         }
       });
-    },
+    }],
 
-    link: function($scope, $element, $attrs, Ctrl) {
+    link: ['$scope', '$element', '$attrs', 'Ctrl', function($scope, $element, $attrs, Ctrl) {
       var $window = $(window);
 
       $scope.$on('$destroy', function() {
         $window.off('resize.jsheightfix')
       });
-    }
+    }]
   }
 
-});
+}]);

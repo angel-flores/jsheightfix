@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>JS Height Fix with Angular</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+
+    <script src="/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="/vendor/angular/angular.min.js"></script>
+
+    <script src="/app/af-js-height-fix.min.js"></script>
+  </head>
+  <div ng-app="js-height-fix" class="app">
+    <div class="content-wrapper js_height_container ">
+      <div class="tool-bar js_height_fixed clearfix">
+        <div class="tool-bar-item">item 1</div>
+        <div class="tool-bar-item">item 2</div>
+        <div class="tool-bar-item">item 3</div>
+        <div class="tool-bar-item">item 4</div>
+        <div class="tool-bar-item">item 5</div>
+      </div>
+      <div jsheightfix class="content-area js_height_remaining">remaining
+        <div class="right-panel-wrapper content-wrapper js_height_container">
+          <div class="right-panel-header js_height_fixed">
+            <div class="title"> 
+              <h1>Title</h1>
+            </div>
+            <div class="subtitle"> 
+              <h2>Sub Title</h2>
+            </div>
+            <div class="description"> 
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum volutpat nulla augue, tincidunt placerat enim volutpat a. Donec enim quam, venenatis et convallis sed, imperdiet quis lacus. </p>
+            </div>
+          </div>
+          <div jsheightfix class="right-panel-content content-area js_height_remaining">This is more info</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</html>
