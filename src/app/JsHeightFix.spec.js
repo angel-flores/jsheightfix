@@ -50,6 +50,17 @@ describe('Directive: JsHeightFix', function() {
     });
 
     describe("when destroyed", function() {
+        it("should remove window resize event listener", function() {
 
+            spyOn($.fn, "off");
+
+            var $jsHeightFix = $validTemplate.clone();
+            $jsHeightFix = createDirective($jsHeightFix); 
+            var _scope = $jsHeightFix.scope();
+            _scope.$destroy();
+
+            expect($.fn.off).toHaveBeenCalled();
+
+        }); 
     });
 });

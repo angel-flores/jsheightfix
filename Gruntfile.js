@@ -70,6 +70,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
 
     grunt.registerTask('devmode', ['karma:unit','clean', 'concat', 'uglify', 'watch']);
+    grunt.registerTask('deploy', ['karma:unit', 'clean', 'concat', 'uglify']);
     grunt.registerTask('default', ['karma']);
   
 }

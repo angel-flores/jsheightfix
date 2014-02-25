@@ -62,13 +62,13 @@ angular.module('js-height-fix', [])
       });
     }],
 
-    link: ['$scope', '$element', '$attrs', 'Ctrl', function($scope, $element, $attrs, Ctrl) {
+    link: function($scope, $element, $attrs, Ctrl) {
       var $window = $(window);
 
       $scope.$on('$destroy', function() {
         $window.off('resize.jsheightfix')
       });
-    }]
+    }
   }
 
 }]);
