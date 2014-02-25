@@ -1,0 +1,15 @@
+{
+    "name": "js-height-fix",
+
+    "version": "0.1.0",
+
+    "dependencies": {
+        "angular": "*",
+        "jquery": "*"
+    },
+
+    "devDependencies": {
+        "angular-mocks": "*"
+    }
+
+}

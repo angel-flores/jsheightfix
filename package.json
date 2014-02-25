@@ -1,0 +1,24 @@
+{
+
+  "author": "Angel Flores",
+
+  "name": "JsHeightFix",
+
+  "version": "0.1.0",
+  
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-karma": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-uglify": "*",
+    
+    "karma": "*",
+    "karma-jasmine": "*",
+    "karma-junit-reporter": "*",
+    "karma-chrome-launcher": "*",
+    "grunt-nodestatic": "~0.1.2"
+  }
+}
